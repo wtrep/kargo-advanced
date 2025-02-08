@@ -39,7 +39,7 @@ spec:
         path: ./src/env/${{ ctx.stage }}
         images:
           - image: ${{ vars.image }}
-            tag: ${{ imageFrom(vars.image).Tag}}
+            tag: ${{ imageFrom(vars.image).Tag }}
     # Build the Kustomize configuration in the ./src directory using the env/<stage>
     # overlay to the ./out directory.
     - uses: kustomize-build

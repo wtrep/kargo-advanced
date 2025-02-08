@@ -14,8 +14,8 @@ spec:
         app: guestbook
     spec:
       containers:
-      - image: ghcr.io/akuity/guestbook:latest
-        name: guestbook
-        ports:
-        - name: http
-          containerPort: 3000
+        - image: ghcr.io/wtrep/guestbook:latest
+          name: guestbook
+          ports:
+            - name: http
+              containerPort: 3000

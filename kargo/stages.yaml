@@ -7,16 +7,16 @@ metadata:
     kargo.akuity.io/color: red
 spec:
   requestedFreight:
-  - origin:
-      kind: Warehouse
-      name: guestbook
-    sources:
-      direct: true
+    - origin:
+        kind: Warehouse
+        name: guestbook
+      sources:
+        direct: true
   promotionTemplate:
     spec:
       steps:
-      - task:
-          name: promote
+        - task:
+            name: promote
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -28,17 +28,17 @@ metadata:
     kargo.akuity.io/color: amber
 spec:
   requestedFreight:
-  - origin:
-      kind: Warehouse
-      name: guestbook
-    sources:
-      stages:
-      - dev
+    - origin:
+        kind: Warehouse
+        name: guestbook
+      sources:
+        stages:
+          - dev
   promotionTemplate:
     spec:
       steps:
-      - task:
-          name: promote
+        - task:
+            name: promote
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -50,23 +50,23 @@ metadata:
     kargo.akuity.io/color: yellow
 spec:
   requestedFreight:
-  - origin:
-      kind: Warehouse
-      name: guestbook
-    sources:
-      stages:
-      - staging
+    - origin:
+        kind: Warehouse
+        name: guestbook
+      sources:
+        stages:
+          - staging
   promotionTemplate:
     spec:
       steps:
-      - task:
-          name: promote
+        - task:
+            name: promote
   verification:
     analysisTemplates:
-    - name: pokemon-xp
+      - name: pokemon-xp
     args:
-    - name: pokemon
-      value: pikachu
+      - name: pokemon
+        value: pikachu
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
@@ -77,24 +77,24 @@ metadata:
     kargo.akuity.io/color: green
 spec:
   requestedFreight:
-  - origin:
-      kind: Warehouse
-      name: guestbook
-    sources:
-      stages:
-      - staging
+    - origin:
+        kind: Warehouse
+        name: guestbook
+      sources:
+        stages:
+          - staging
   promotionTemplate:
     spec:
       steps:
-      - task:
-          name: promote
+        - task:
+            name: promote
 
   verification:
     analysisTemplates:
-    - name: pokemon-xp
+      - name: pokemon-xp
     args:
-    - name: pokemon
-      value: charizard
+      - name: pokemon
+        value: pikachu
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
@@ -105,13 +105,13 @@ metadata:
     kargo.akuity.io/color: blue
 spec:
   requestedFreight:
-  - origin:
-      kind: Warehouse
-      name: guestbook
-    sources:
-      stages:
-      - ab-test-a
-      - ab-test-b
+    - origin:
+        kind: Warehouse
+        name: guestbook
+      sources:
+        stages:
+          - ab-test-a
+          - ab-test-b
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
@@ -122,17 +122,17 @@ metadata:
     kargo.akuity.io/color: violet
 spec:
   requestedFreight:
-  - origin:
-      kind: Warehouse
-      name: guestbook
-    sources:
-      stages:
-      - prod
+    - origin:
+        kind: Warehouse
+        name: guestbook
+      sources:
+        stages:
+          - prod
   promotionTemplate:
     spec:
       steps:
-      - task:
-          name: promote
+        - task:
+            name: promote
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -144,17 +144,17 @@ metadata:
     kargo.akuity.io/color: violet
 spec:
   requestedFreight:
-  - origin:
-      kind: Warehouse
-      name: guestbook
-    sources:
-      stages:
-      - prod
+    - origin:
+        kind: Warehouse
+        name: guestbook
+      sources:
+        stages:
+          - prod
   promotionTemplate:
     spec:
       steps:
-      - task:
-          name: promote
+        - task:
+            name: promote
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -166,14 +166,14 @@ metadata:
     kargo.akuity.io/color: violet
 spec:
   requestedFreight:
-  - origin:
-      kind: Warehouse
-      name: guestbook
-    sources:
-      stages:
-      - prod
+    - origin:
+        kind: Warehouse
+        name: guestbook
+      sources:
+        stages:
+          - prod
   promotionTemplate:
     spec:
       steps:
-      - task:
-          name: promote
+        - task:
+            name: promote

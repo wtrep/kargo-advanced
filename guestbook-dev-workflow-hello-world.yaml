@@ -11,6 +11,7 @@ metadata:
   namespace: guestbook-dev
 spec:
   entrypoint: hello-world
+  serviceAccountName: hello-world-sa
   templates:
   - container:
       args:

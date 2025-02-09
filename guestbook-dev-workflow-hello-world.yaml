@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+    workflows.argoproj.io/description: |
+      This is a simple hello world example.
+  labels:
+    workflows.argoproj.io/archive-strategy: "false"
+  name: hello-world
+  namespace: guestbook-dev
+spec:
+  entrypoint: hello-world
+  templates:
+  - container:
+      args:
+      - hello world
+      command:
+      - echo
+      image: busybox
+    name: hello-world
